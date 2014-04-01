@@ -1,0 +1,16 @@
+Überschreibt "Mage_Catalog_Block_Product_List_Toolbar"
+damit nun die Block Methode "removeOrderFromAvailableOrders"
+auch per XML Layout verwendet werden kann.
+
+Sample Code:
+    <_category>
+        <reference name="product_list_toolbar">
+            <action method="removeOrderFromAvailableOrders"><orders>position</orders></action>
+        </reference>
+    </_category>
+    <catalog_category_default>
+        <update handle="_category"/>
+    </catalog_category_default>
+    <catalog_category_layered>
+        <update handle="_category"/>
+    </catalog_category_layered>
