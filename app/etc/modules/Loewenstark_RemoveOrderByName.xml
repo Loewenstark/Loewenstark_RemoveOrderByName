@@ -2,8 +2,8 @@
 <config>
     <modules>
         <Loewenstark_RemoveOrderByName>
-            <active>community</active>
-            <codePool>local</codePool>
+            <active>true</active>
+            <codePool>community</codePool>
             <depends>
                 <Mage_Catalog />
             </depends>
