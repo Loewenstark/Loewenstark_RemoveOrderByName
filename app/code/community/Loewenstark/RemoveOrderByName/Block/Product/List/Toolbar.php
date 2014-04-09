@@ -17,21 +17,18 @@ extends Mage_Catalog_Block_Product_List_Toolbar {
     }
     
     /**
-     * @see Mage_Catalog_Block_Product_List_Toolbar::getAvailableOrders()
-     *
-     * @return array
-     **/
-    public function getAvailableOrders()
+     * remove items from self::$_availableOrder
+     */
+    protected function _beforeToHtml()
     {
-        $availableOrder = parent::getAvailableOrders();
+        parent::_beforeToHtml();
         if( !empty( $this->_unset_order ) && is_array($this->_unset_order) ) {
             foreach( $this->_unset_order as $order ) {
-                if (isset($availableOrder[$order])) {
-                    unset($availableOrder[$order]);
+                if (isset($this->_availableOrder[$order])) {
+                    unset($this->_availableOrder[$order]);
                 }
             }
         }
-        return $availableOrder;
+        return $this;
     }
-
 }
